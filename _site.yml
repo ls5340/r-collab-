@@ -3,7 +3,7 @@ navbar:
   title: "Our Collaborative Website"
   left:
     - text: "Cars"
-      href: Index.html
+      href: Cars.html
     - text: "About"
       href: About.html
 output_dir: "."
