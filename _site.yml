@@ -3,9 +3,9 @@ navbar:
   title: "Our Collaborative Website"
   left:
     - text: "Cars"
-      href: index.html
+      href: Index.html
     - text: "About"
-      href: about.html
+      href: About.html
 output_dir: "."
 output:
   html_document:
