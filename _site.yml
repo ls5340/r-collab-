@@ -11,5 +11,5 @@ output:
   html_document:
     theme: cerulean
     highlight: textmate
-    toc: true 
+    toc: true
     toc_float: true 
