@@ -2,7 +2,8 @@
 title: "r-collab'"
 author: "Benmirin, Dongcheng, Lei"
 date: "2/8/2022"
-output: html_document
+output:
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
