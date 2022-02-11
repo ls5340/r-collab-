@@ -6,9 +6,9 @@ navbar:
       href: Cars.html
     - text: "About"
       href: About.html
-    - text: "Penguins_1"
+    - text: Penguins
       menu:
-        - text: "About"
+        - text: About
         - text: "Penguins_1"
           href: Penguins_1.html
   right:
