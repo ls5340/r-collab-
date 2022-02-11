@@ -9,6 +9,8 @@ navbar:
       menu:
         - text: "Penguins_1"
           href: Penguins_1.html
+        - text: "Penguins_2"
+          href: Penguins_2.html
   right:
     - icon: fa-question fa-lg
       href: https://example.com
