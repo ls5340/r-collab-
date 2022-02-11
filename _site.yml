@@ -7,9 +7,8 @@ navbar:
     - text: "About"
       href: About.html
       menu:
-        - text: "Penguin"
         - text: "Page A"
-          href: Penguin.html
+          href: Penguins.html
   right:
     - icon: fa-question fa-lg
       href: https://example.com
