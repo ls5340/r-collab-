@@ -6,8 +6,6 @@ output: html_document
 
 ## Including Plots
 
-<hr>
-
 ```{r message=TRUE}
 #install.packages("palmerpenguins")
 library(palmerpenguins)
