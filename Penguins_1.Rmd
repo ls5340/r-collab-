@@ -1,0 +1,145 @@
+---
+title: "Penguins_1"
+author: "Lei"
+date: "2/11/2022"
+output: html_document
+---
+
+<hr>
+
+```{r message=TRUE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+```
+
+<hr>
+
+```{r message=FALSE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+```
+
+<hr>
+
+```{r, echo=TRUE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+```
+
+<hr>
+
+```{r, echo=FALSE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+```
+
+<hr>
+
+```{r include=TRUE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+```
+
+<hr>
+
+```{r include=FALSE}
+#install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+#View(penguins)
+dim(penguins)
+colnames(penguins)
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<hr>
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+<hr>
+
+```{r penguins, message=FALSE}
+plot(penguins)
+```
+
+<hr>
+
+```{r penguins2, echo=FALSE}
+plot(penguins)
+```
+
+<hr>
+
+```{r penguins1, include=FALSE}
+plot(penguins)
+```
+
+<hr>
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+penguins %>%
+  ggplot(mapping = aes(x = bill_length_mm, y=bill_depth_mm, color=sex)) +
+  geom_point(size=1) +
+  facet_wrap(~species)
+```
+
+```{r}
+penguins %>%
+  ggplot(mapping = aes(x=flipper_length_mm, y=sex, color=sex)) +
+  geom_boxplot(outlier.alpha = 0, alpha=0) +
+  geom_jitter(width = 0, size=1) +
+  coord_flip() +
+  facet_wrap(~species)
+```
+
+```{r}
+penguins %>%
+  ggplot() +
+  geom_bar(mapping = aes(x=year, fill=island)) +
+  facet_wrap(~species)
+```
+
+
+
