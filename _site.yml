@@ -8,8 +8,11 @@ navbar:
       href: About.html
     - text: "Penguins"
       menu:
+        - text: "about"
         - text: "Penguins_1"
           href: Penguins_1.html
+        - text: "Penguins_2"
+          href: Penguins_2.html
 output_dir: "."
 output:
   html_document:
