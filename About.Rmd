@@ -28,3 +28,46 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+library(readr)
+Auto <- read.table("Auto.data",header=T,na.strings="?")
+View(Auto)
+Auto <- na.omit(Auto)
+names(Auto)
+quantitative <- c("mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "year")
+qualitative <- c("origin", "name")
+quantitative
+qualitative
+quant = sapply(Auto,is.numeric)
+quant
+apply(quant_pred_range, 2, range,na.rm=TRUE)
+apply(quant_pred_range, 2, mean,na.rm=TRUE)
+apply(quant_pred_range, 2, sd,na.rm=TRUE)
+quant_pred_range <- subset(Auto, select = colnames(Auto) %in% quantitative)
+quant_data_updated <- quant_pred_range[-c(10:85),]
+apply(quant_data_updated, 2, range,na.rm=TRUE)
+apply(quant_data_updated, 2, mean,na.rm=TRUE)
+apply(quant_data_updated, 2, sd,na.rm=TRUE)
+pairs(~mpg + displacement + horsepower + weight + acceleration, Auto)
+summary(Auto)
+#mpg and displacement are negatively correlated with each other.
+#mpg and horsepower are negatively correlated with each other.
+#mpg and weight are negatively correlated with each other.
+#mpg and acceleration are positively correlated with each other.
+
+#displacement and horsepower are positively correlated with each other.
+#displacement and weight are positively correlated with each other.
+#displacement and acceleration are negatively correlated with each other.
+
+#horsepower and weight are positively correlated with each other.
+#horsepower and acceleration are negatively correlated with each other.
+
+#weight and acceleration are negatively correlated with each other.
+plot(Auto$mpg,Auto$cylinders)
+plot(Auto$mpg,Auto$displacement)
+plot(Auto$mpg,Auto$horsepower)
+plot(Auto$mpg,Auto$weight)
+plot(Auto$mpg,Auto$acceleration)
+```
+

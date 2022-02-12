@@ -1,6 +1,6 @@
 ---
 title: "r-collab'"
-author: "Benmirin, Dongcheng, Lei"
+author: "bhm48, dl2236, ls929"
 date: "2/8/2022"
 output:
   html_document: default

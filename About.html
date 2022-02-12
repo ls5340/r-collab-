@@ -372,6 +372,134 @@ div.tocify {
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
 </div>
+<div id="ggplot" class="section level2">
+<h2>ggplot</h2>
+<pre class="r"><code>#ggplot lesson 1
+
+library(tidyverse)
+
+head(cars)</code></pre>
+<pre><code>##   speed dist
+## 1     4    2
+## 2     4   10
+## 3     7    4
+## 4     7   22
+## 5     8   16
+## 6     9   10</code></pre>
+<pre class="r"><code>tail(cars, 10)</code></pre>
+<pre><code>##    speed dist
+## 41    20   52
+## 42    20   56
+## 43    20   64
+## 44    22   66
+## 45    23   54
+## 46    24   70
+## 47    24   92
+## 48    24   93
+## 49    24  120
+## 50    25   85</code></pre>
+<pre class="r"><code>?ggplot
+#ggplot(data = &lt;DATA&gt;) + 
+#  &lt;GEOM_FUNCTION&gt;(
+#    mapping = aes(&lt;MAPPINGS&gt;),
+    
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = cyl, y = hwy))</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = drv, y = class))</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = class, size = cyl))</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = cyl, size = class))</code></pre>
+<pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = class, size = cyl), shape = 1)</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy), color = &quot;blue&quot;)</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy), color = &quot;blue&quot;) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(color = &quot;blue&quot;) +
+  geom_smooth() +
+  facet_wrap(~ year)</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(color = &quot;blue&quot;) +
+  geom_smooth() +
+  facet_wrap(~ class, ncol = 2)</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : span too small. fewer data values than degrees of freedom.</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : pseudoinverse used at 5.6935</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : neighborhood radius 0.5065</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : reciprocal condition number 0</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : There are other near singularities as well. 0.65044</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : span too small. fewer
+## data values than degrees of freedom.</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at
+## 5.6935</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
+## 0.5065</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : reciprocal condition
+## number 0</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : There are other near
+## singularities as well. 0.65044</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : pseudoinverse used at 4.008</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : neighborhood radius 0.708</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : reciprocal condition number 0</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : There are other near singularities as well. 0.25</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at
+## 4.008</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
+## 0.708</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : reciprocal condition
+## number 0</code></pre>
+<pre><code>## Warning in predLoess(object$y, object$x, newx = if
+## (is.null(newdata)) object$x else if (is.data.frame(newdata))
+## as.matrix(model.frame(delete.response(terms(object)), : There are other near
+## singularities as well. 0.25</code></pre>
+<p><img src="About_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+<pre class="r"><code>#    stat = &lt;STAT&gt;, 
+#    position = &lt;POSITION&gt;
+#  ) +
+#  &lt;COORDINATE_FUNCTION&gt; +
+#  &lt;FACET_FUNCTION&gt; +
+#  &lt;THEME_FUNCTION&gt;</code></pre>
+</div>
 <div id="including-plots" class="section level2">
 <h2>Including Plots</h2>
 <p>You can also embed plots, for example:</p>

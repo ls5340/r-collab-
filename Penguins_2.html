@@ -357,105 +357,59 @@ div.tocify {
 </div>
 
 
-<hr>
-<pre class="r"><code>#install.packages(&quot;palmerpenguins&quot;)
-library(palmerpenguins)
-library(tidyverse)
-
-#View(penguins)
-dim(penguins)</code></pre>
-<pre><code>## [1] 344   8</code></pre>
-<pre class="r"><code>colnames(penguins)</code></pre>
-<pre><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
-## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
-## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
-<hr>
-<pre class="r"><code>#install.packages(&quot;palmerpenguins&quot;)
-library(palmerpenguins)
-library(tidyverse)
-
-#View(penguins)
-dim(penguins)</code></pre>
-<pre><code>## [1] 344   8</code></pre>
-<pre class="r"><code>colnames(penguins)</code></pre>
-<pre><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
-## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
-## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
-<hr>
-<pre class="r"><code>#install.packages(&quot;palmerpenguins&quot;)
-library(palmerpenguins)
-library(tidyverse)
-
-#View(penguins)
-dim(penguins)</code></pre>
-<pre><code>## [1] 344   8</code></pre>
-<pre class="r"><code>colnames(penguins)</code></pre>
-<pre><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
-## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
-## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
-<hr>
-<pre><code>## [1] 344   8</code></pre>
-<pre><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
-## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
-## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
-<hr>
-<pre class="r"><code>#install.packages(&quot;palmerpenguins&quot;)
-library(palmerpenguins)
-library(tidyverse)
-
-#View(penguins)
-dim(penguins)</code></pre>
-<pre><code>## [1] 344   8</code></pre>
-<pre class="r"><code>colnames(penguins)</code></pre>
-<pre><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
-## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
-## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
-<hr>
-<hr>
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-</div>
 <div id="including-plots" class="section level2">
 <h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<hr>
+<pre class="r"><code>library(tidyverse)
+library(palmerpenguins)
+names(penguins)</code></pre>
+<pre><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
+## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
+## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
+<pre class="r"><code>## [1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
+## [4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
+## [7] &quot;sex&quot;
+glimpse(penguins)</code></pre>
+<pre><code>## Rows: 344
+## Columns: 8
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…</code></pre>
+<pre class="r"><code>## Rows: 344</code></pre>
+<pre class="r"><code>## Columns: 7
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
+penguins %&gt;%
+  #group_by(species) %&gt;%
+   select(everything()) %&gt;% 
+  summarise_all(funs(sum(is.na(.)))) %&gt;%
+  pivot_longer(cols = 1:7, names_to = &#39;columns&#39;, values_to = &#39;NA_count&#39;) %&gt;%
+  arrange(desc(NA_count)) %&gt;%
+  ggplot(aes(y = columns, x = NA_count)) + geom_col(fill = &#39;darkorange&#39;) +
+  geom_label(aes(label = NA_count)) +
+#   scale_fill_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  theme_minimal() +
+  labs(title = &#39;Penguins - NA Count&#39;)</code></pre>
+<p><img src="Penguins_2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>plot(penguins)</code></pre>
-<p><img src="Penguins_2_files/figure-html/penguins-1.png" width="672" /></p>
-<hr>
-<p><img src="Penguins_2_files/figure-html/penguins2-1.png" width="672" /></p>
-<hr>
-<hr>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<p><img src="Penguins_2_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="r"><code>penguins %&gt;%
-  ggplot(mapping = aes(x = bill_length_mm, y=bill_depth_mm, color=sex)) +
-  geom_point(size=1) +
-  facet_wrap(~species)</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="Penguins_2_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<pre class="r"><code>penguins %&gt;%
-  ggplot(mapping = aes(x=flipper_length_mm, y=sex, color=sex)) +
-  geom_boxplot(outlier.alpha = 0, alpha=0) +
-  geom_jitter(width = 0, size=1) +
-  coord_flip() +
-  facet_wrap(~species)</code></pre>
-<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_boxplot).</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="Penguins_2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<pre class="r"><code>penguins %&gt;%
-  ggplot() +
-  geom_bar(mapping = aes(x=year, fill=island)) +
-  facet_wrap(~species)</code></pre>
-<p><img src="Penguins_2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+  count(species) %&gt;%
+  ggplot() + geom_col(aes(x = species, y = n, fill = species)) +
+  geom_label(aes(x = species, y = n, label = n)) +
+  scale_fill_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  theme_minimal() +
+  labs(title = &#39;Penguins Species &amp; Count&#39;)</code></pre>
+<p><img src="Penguins_2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 
 
