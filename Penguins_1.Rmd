@@ -1,6 +1,5 @@
 ---
 title: "Penguins_1"
-author: "Lei"
 date: "2/11/2022"
 output: html_document
 ---
