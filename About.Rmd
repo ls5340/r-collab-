@@ -19,6 +19,63 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
+## ggplot
+
+```{r, message=FALSE}
+#ggplot lesson 1
+
+library(tidyverse)
+
+head(cars)
+tail(cars, 10)
+
+?ggplot
+#ggplot(data = <DATA>) + 
+#  <GEOM_FUNCTION>(
+#    mapping = aes(<MAPPINGS>),
+    
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = cyl, y = hwy))
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = drv, y = class))
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = class, size = cyl))
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = cyl, size = class))
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = class, size = cyl), shape = 1)
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue") +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(color = "blue") +
+  geom_smooth() +
+  facet_wrap(~ year)
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(color = "blue") +
+  geom_smooth() +
+  facet_wrap(~ class, ncol = 2)
+#    stat = <STAT>, 
+#    position = <POSITION>
+#  ) +
+#  <COORDINATE_FUNCTION> +
+#  <FACET_FUNCTION> +
+#  <THEME_FUNCTION>
+```
+
 ## Including Plots
 
 You can also embed plots, for example:
@@ -28,46 +85,3 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-```{r}
-library(readr)
-Auto <- read.table("Auto.data",header=T,na.strings="?")
-View(Auto)
-Auto <- na.omit(Auto)
-names(Auto)
-quantitative <- c("mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "year")
-qualitative <- c("origin", "name")
-quantitative
-qualitative
-quant = sapply(Auto,is.numeric)
-quant
-apply(quant_pred_range, 2, range,na.rm=TRUE)
-apply(quant_pred_range, 2, mean,na.rm=TRUE)
-apply(quant_pred_range, 2, sd,na.rm=TRUE)
-quant_pred_range <- subset(Auto, select = colnames(Auto) %in% quantitative)
-quant_data_updated <- quant_pred_range[-c(10:85),]
-apply(quant_data_updated, 2, range,na.rm=TRUE)
-apply(quant_data_updated, 2, mean,na.rm=TRUE)
-apply(quant_data_updated, 2, sd,na.rm=TRUE)
-pairs(~mpg + displacement + horsepower + weight + acceleration, Auto)
-summary(Auto)
-#mpg and displacement are negatively correlated with each other.
-#mpg and horsepower are negatively correlated with each other.
-#mpg and weight are negatively correlated with each other.
-#mpg and acceleration are positively correlated with each other.
-
-#displacement and horsepower are positively correlated with each other.
-#displacement and weight are positively correlated with each other.
-#displacement and acceleration are negatively correlated with each other.
-
-#horsepower and weight are positively correlated with each other.
-#horsepower and acceleration are negatively correlated with each other.
-
-#weight and acceleration are negatively correlated with each other.
-plot(Auto$mpg,Auto$cylinders)
-plot(Auto$mpg,Auto$displacement)
-plot(Auto$mpg,Auto$horsepower)
-plot(Auto$mpg,Auto$weight)
-plot(Auto$mpg,Auto$acceleration)
-```
-
