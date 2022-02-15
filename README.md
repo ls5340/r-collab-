@@ -1,4 +1,4 @@
 # r-collab-
-https://github.com/ls5340/r-collab-.git
+https://ls5340.github.io/r-collab-/
 <br>
 R-collab-.html
