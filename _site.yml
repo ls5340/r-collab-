@@ -7,12 +7,21 @@ navbar:
     - text: "About"
       href: About.html
     - text: "Penguins"
-      menu:
-        - text: "about"
+      menu-Lei:
         - text: "Penguins_1"
           href: Penguins_1.html
         - text: "Penguins_2"
           href: Penguins_2.html
+      menu-Dongcheng:
+        - text: "Penguins_1"
+          href: Penguins_1.html
+        - text: "Penguins_2"
+          href: Penguins_2.html
+      menu-Ben:
+        - text: "Penguins_1"
+          href: Penguins_1.html
+        - text: "Penguins_2"
+          href: Penguins_2.html          
 output_dir: "."
 output:
   html_document:
