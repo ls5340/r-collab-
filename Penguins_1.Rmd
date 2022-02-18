@@ -4,6 +4,9 @@ date: "2/11/2022"
 output: html_document
 ---
 
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+
+
 ## Including Plots
 
 ```{r message=TRUE}
@@ -16,7 +19,6 @@ dim(penguins)
 colnames(penguins)
 ```
 
-<hr>
 
 ```{r message=FALSE}
 #install.packages("palmerpenguins")
